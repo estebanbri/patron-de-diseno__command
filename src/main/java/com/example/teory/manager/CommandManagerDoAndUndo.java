@@ -1,6 +1,6 @@
-package com.example.manager;
+package com.example.teory.manager;
 
-import com.example.command.Command;
+import com.example.teory.command.Command;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

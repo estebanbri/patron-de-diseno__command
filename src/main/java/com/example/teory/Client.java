@@ -1,11 +1,11 @@
-package com.example;
+package com.example.teory;
 
-import com.example.command.Command;
-import com.example.command.impl.ConcreteCommandA;
-import com.example.command.impl.ConcreteCommandB;
-import com.example.manager.CommandManagerDoAndUndo;
-import com.example.manager.CommandManagerMacro;
-import com.example.manager.CommandManagerSimple;
+import com.example.teory.command.Command;
+import com.example.teory.command.impl.ConcreteCommandA;
+import com.example.teory.command.impl.ConcreteCommandB;
+import com.example.teory.manager.CommandManagerDoAndUndo;
+import com.example.teory.manager.CommandManagerMacro;
+import com.example.teory.manager.CommandManagerSimple;
 
 public class Client {
     public static void main(String[] args) {

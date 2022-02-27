@@ -1,6 +1,6 @@
-package com.example.command.impl;
+package com.example.teory.command.impl;
 
-import com.example.command.Command;
+import com.example.teory.command.Command;
 
 public class ConcreteCommandA implements Command {
 
