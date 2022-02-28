@@ -1,14 +1,11 @@
-package com.example.teory.manager;
+package com.example.teory.invoker;
 
 import com.example.teory.command.Command;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-/**
- *  Invoker
- */
-public class CommandManagerDoAndUndo {
+public class CommandManagerDoUndo {
 
     /**
      *  Pila de comandos que vayamos ejecutando
@@ -44,5 +41,4 @@ public class CommandManagerDoAndUndo {
     private void resetUndoneCommandList() {
         this.undoneCommandList.clear();
     }
-
 }

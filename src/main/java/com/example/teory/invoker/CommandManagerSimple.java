@@ -1,10 +1,7 @@
-package com.example.teory.manager;
+package com.example.teory.invoker;
 
 import com.example.teory.command.Command;
 
-/**
- *  Invoker
- */
 public class CommandManagerSimple {
 
     public void runCommand(Command command) {

@@ -1,26 +1,29 @@
 package com.example.teory.command.impl;
 
 import com.example.teory.command.Command;
+import com.example.teory.receiver.Receiver;
 
-public class ConcreteCommandA implements Command {
+public class ConcreteCommandA extends Command {
 
-    private String value;
-
-    public ConcreteCommandA(String value) {
-        this.value = value;
+    public ConcreteCommandA(Receiver receiver) {
+        super(receiver);
     }
 
     @Override
     public void execute() {
-        System.out.println("ConcreteCommandA -> execute(): adding 'a'");
-        this.value = this.value + "a";
-        System.out.println(this.value);
+        String dataFromDB = callDB();
+        this.receiver.setData(dataFromDB); // esto va a ser seteado para que los demas comandos reutilicen la info obtenida aqui es como un pasaje en cascada de data a traves del receiver
+        System.out.format("Ejecutando ConcreteCommandA logic con la data obtenida de dataFromDB = (%s)\n", dataFromDB);
     }
 
     @Override
     public void undo() {
-        System.out.println("ConcreteCommandA -> undo(): removing 'a'");
-        this.value = this.value.substring(0, this.value.length() - 1);
-        System.out.println(this.value);
+        System.out.println("undo logic");
     }
+
+    private String callDB() {
+        return "Example data: 8 rows in DB";
+    }
+
 }
+

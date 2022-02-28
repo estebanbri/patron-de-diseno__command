@@ -1,26 +1,23 @@
 package com.example.teory.command.impl;
 
 import com.example.teory.command.Command;
+import com.example.teory.receiver.Receiver;
 
-public class ConcreteCommandB implements Command {
+public class ConcreteCommandB  extends Command  {
 
-    private String value;
-
-    public ConcreteCommandB(String value) {
-        this.value = value;
+    public ConcreteCommandB(Receiver receiver) {
+        super(receiver);
     }
 
     @Override
     public void execute() {
-        System.out.println("ConcreteCommandB -> execute(): adding 'b'");
-        this.value = this.value + "b";
-        System.out.println(this.value);
+        String dataFromReceiver = this.receiver.getData();
+        System.out.format("Executing ConcreteCommandB logic with data form receiver = {%s}\n", dataFromReceiver);
     }
 
     @Override
     public void undo() {
-        System.out.println("ConcreteCommandB -> undo(): removing 'b'");
-        this.value = this.value.substring(0, this.value.length() - 1);
-        System.out.println(this.value);
+        System.out.println("undo logic");
     }
+
 }

@@ -1,26 +1,21 @@
 package com.example.practice;
 
 import com.example.practice.command.Command;
-import com.example.practice.command.impl.EncenderCommand;
+import com.example.practice.command.impl.GetPendingToSendEmailsCommand;
+import com.example.practice.command.impl.BuildHtmlTemplateCommand;
+import com.example.practice.command.impl.SendEmailCommand;
 import com.example.practice.invoker.CommandManager;
-import com.example.practice.receiver.Receiver;
-import com.example.practice.receiver.impl.DVDPlayer;
-import com.example.practice.receiver.impl.TV;
+import com.example.practice.receiver.Container;
+import com.example.practice.receiver.impl.ContainerImpl;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Client {
     public static void main(String[] args) {
-
-        // Receivers
-        Receiver tv = new TV();
-        Receiver dvdPlayer = new DVDPlayer();
-
-        // Command (same command different receivers)
-        Command encenderCommandTV = new EncenderCommand(tv);
-        Command encenderCommandDVD = new EncenderCommand(dvdPlayer);
-
-        // Invoker
         CommandManager commandManager = new CommandManager();
-        commandManager.runCommand(encenderCommandTV);
-        commandManager.runCommand(encenderCommandDVD);
+        commandManager.runBatch(CommandManager.getCommandsBatchSendEmail());
     }
+
+
 }
