@@ -18,7 +18,7 @@ public class CommandManager {
                 new GetPendingToSendEmailsCommand(container),
                 new BuildHtmlTemplateCommand(container),
                 new SendEmailCommand(container)
-                //,new SendMobileNotification()   // El dia de mañana te dicen que despues de enviar el email tenes que enviar una notificacion y no tenes que abrir las demas clases crear un comando nuevo y listo
+                //,new SendMobileNotification(container)   // El dia de mañana te dicen que despues de enviar el email tenes que enviar una notificacion y no tenes que abrir las demas clases crear un comando nuevo y listo
         );
     }
 
